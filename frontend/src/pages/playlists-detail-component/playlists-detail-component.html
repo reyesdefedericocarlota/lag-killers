@@ -1,0 +1,25 @@
+<div *ngIf="playlist()">
+
+  <h1>{{ playlist().titulo }}</h1>
+
+  <img [src]="playlist().portada" width="200">
+
+  <p>{{ playlist().descripcion }}</p>
+
+  <hr>
+
+  <h2>🎧 Canciones</h2>
+
+  <div *ngFor="let c of playlist().canciones">
+
+    <p>
+      🎵 {{ c.titulo }} - {{ c.artista }}
+    </p>
+
+    <audio controls>
+      <source [src]="c.urlAudio">
+    </audio>
+
+  </div>
+
+</div>
