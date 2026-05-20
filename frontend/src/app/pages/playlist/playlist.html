@@ -1,0 +1,30 @@
+<div class="playlist-container">
+  <div class="lista-seccion">
+    <h3>🎧 Mis Playlists</h3>
+    <ul class="playlist-lista">
+      <li *ngFor="let pl of listaPlaylists" (click)="verDetalle(pl)" class="playlist-item">
+        <strong>{{ pl.nombre }}</strong> <br>
+        <small>Creada por: {{ pl.creador }}</small>
+      </li>
+    </ul>
+    <p style="font-size: 0.85em; color: #666; margin-top: 10px;">* Haz clic en una playlist para ver sus canciones</p>
+  </div>
+
+  <div class="detalle-seccion" *ngIf="playlistSeleccionada() as seleccion">
+    <h3>🎶 Canciones de: <span style="color: #17a2b8;">{{ seleccion.nombre }}</span></h3>
+    <table class="tabla-detalle">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Artista</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cancion of seleccion.canciones">
+          <td>{{ cancion.titulo }}</td>
+          <td>{{ cancion.artista }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

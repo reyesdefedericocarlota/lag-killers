@@ -1,0 +1,25 @@
+<h1>➕ Nueva Playlist</h1>
+
+<form [formGroup]="form" (ngSubmit)="crear()">
+
+  <input formControlName="titulo" placeholder="Título">
+
+  <p *ngIf="form.get('titulo')?.invalid && form.get('titulo')?.touched">
+    ❌ El título es obligatorio
+  </p>
+
+  <input formControlName="descripcion" placeholder="Descripción">
+
+  <input formControlName="portada" placeholder="URL portada">
+
+  <!-- PREVIEW EN TIEMPO REAL -->
+  <div *ngIf="form.value.portada">
+    <p>Vista previa:</p>
+    <img [src]="form.value.portada" width="150">
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">
+    Crear
+  </button>
+
+</form>
