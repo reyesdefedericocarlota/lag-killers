@@ -1,13 +1,23 @@
 import { Routes } from '@angular/router';
-import{PlaylistsComponent} from '.pages/playlists/playlists.component';
-import{PlaylistFormComponent} from '.pages/playlist-form/playlist-form.component';
-import{PlaylistDetailComponent} from '.pages/playlist-detail/playlist-detail.component';
+
 export const routes: Routes = [
   { path: '', redirectTo: 'playlists', pathMatch: 'full' },
 
-  { path: 'playlists', component: PlaylistsComponent },
-
-  { path: 'playlists/nueva', component: PlaylistFormComponent },
-
-  { path: 'playlists/:id', component: PlaylistDetailComponent },
+  {
+    path: 'playlists',
+    loadComponent: () =>
+      import('./pages/playlists/playlists.component').then((m) => m.PlaylistsComponent),
+  },
+  {
+    path: 'playlists/nueva',
+    loadComponent: () =>
+      import('./pages/playlist-form/playlist-form.component').then((m) => m.PlaylistFormComponent),
+  },
+  {
+    path: 'playlists/:id',
+    loadComponent: () =>
+      import('./pages/playlist-detail/playlist-detail.component').then(
+        (m) => m.PlaylistDetailComponent,
+      ),
+  },
 ];

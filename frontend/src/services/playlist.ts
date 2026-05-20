@@ -1,5 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface Playlist {
+  id?: number;
+  titulo: string;
+  descripcion: string;
+  portada?: string;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -9,23 +17,19 @@ export class PlaylistService {
 
   constructor(private http: HttpClient) {}
 
-
-  getAll() {
-    return this.http.get<any[]>(this.apiUrl);
+  getAll(): Observable<Playlist[]> {
+    return this.http.get<Playlist[]>(this.apiUrl);
   }
 
-
-  getById(id: number) {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  getById(id: string): Observable<Playlist> {
+    return this.http.get<Playlist>(`${this.apiUrl}/${id}`);
   }
 
-
-  create(playlist: any) {
-    return this.http.post(this.apiUrl, playlist);
+  create(playlist: Playlist): Observable<Playlist> {
+    return this.http.post<Playlist>(this.apiUrl, playlist);
   }
 
-
-  delete(id: number) {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  delete(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
