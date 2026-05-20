@@ -2,6 +2,7 @@ package com.lagkillers.backend.service;
 
 import com.lagkillers.backend.model.Playlist;
 import com.lagkillers.backend.repository.PlaylistRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,10 @@ public class PlaylistService {
 
     public List<Playlist> getPlaylists() {
         return playlistRepository.findAll();
+    }
+
+    public List<Playlist> getPlaylistsByUser(Long userId) {
+        return playlistRepository.findByUserId(userId);
     }
 
     public Playlist createPlaylist(Playlist playlist) {

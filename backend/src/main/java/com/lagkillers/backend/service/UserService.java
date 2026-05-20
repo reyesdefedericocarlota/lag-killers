@@ -1,7 +1,8 @@
 package com.lagkillers.backend.service;
 
 import com.lagkillers.backend.model.User;
-import com.lagkillers.repository.UserRepository;
+import com.lagkillers.backend.repository.UserRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

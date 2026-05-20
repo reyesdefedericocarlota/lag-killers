@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/songs")
 public class SongController {
 
@@ -18,8 +19,13 @@ public class SongController {
     }
 
     @GetMapping
-    public List<Song> getSongs() {
+    public List<Song> getAllSongs() {
         return songService.getSongs();
+    }
+
+    @GetMapping("/playlist/{id}")
+    public List<Song> getSongsByPlaylist(@PathVariable Long id) {
+        return songService.getSongsByPlaylist(id);
     }
 
     @PostMapping
