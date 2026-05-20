@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <div class="form-container">
+    <h3>🎵 Añadir Nueva Canción</h3>
+    <form [formGroup]="cancionForm" (ngSubmit)="guardarCancion()">
+
+      <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input id="titulo" type="text" formControlName="titulo" placeholder="Ej: Blinding Lights">
+      </div>
+
+      <div class="form-group">
+        <label for="artista">Artista:</label>
+        <input id="artista" type="text" formControlName="artista" placeholder="Ej: The Weeknd">
+      </div>
+
+      <div class="form-group">
+        <label for="duracion">Duración (Ej: 3:45):</label>
+        <input id="duracion" type="text" formControlName="duracion" placeholder="Ej: 3:45">
+      </div>
+
+      <button type="submit" [disabled]="cancionForm.invalid" class="btn-submit">
+        Guardar Canción
+      </button>
+    </form>
+  </div>
+
+  <div class="table-container">
+    <h3>📋 Repertorio de Canciones</h3>
+    <table class="tabla-canciones">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Artista</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cancion of listaCanciones">
+          <td class="bold">{{ cancion.id }}</td>
+          <td>{{ cancion.titulo }}</td>
+          <td>{{ cancion.artista }}</td>
+          <td><span class="badge">⏱️ {{ cancion.duracion }}</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
