@@ -20,6 +20,25 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
+
+    public User updateUser(Long id, User updatedUser) {
+
+        User user = userRepository.findById(id).orElse(null);
+
+        if (user != null) {
+            user.setUsername(updatedUser.getUsername());
+            user.setEmail(updatedUser.getEmail());
+            user.setBirthDate(updatedUser.getBirthDate());
+
+            return userRepository.save(user);
+        }
+
+        return null;
+    }
+
     public User createUser(User user) {
         return userRepository.save(user);
     }

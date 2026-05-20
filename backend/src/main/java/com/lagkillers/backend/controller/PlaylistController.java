@@ -23,6 +23,16 @@ public class PlaylistController {
         return playlistService.getPlaylists();
     }
 
+    @GetMapping("/{id}")
+    public Playlist getPlaylistById(@PathVariable Long id) {
+        return playlistService.getPlaylistById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Playlist updatePlaylist(@PathVariable Long id, @RequestBody Playlist playlist) {
+        return playlistService.updatePlaylist(id, playlist);
+    }
+
     @GetMapping("/user/{id}")
     public List<Playlist> getPlaylistsByUser(@PathVariable Long id) {
         return playlistService.getPlaylistsByUser(id);
