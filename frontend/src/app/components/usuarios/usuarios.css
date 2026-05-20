@@ -1,0 +1,7 @@
+.usuarios-container { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+.usuarios-container h3 { color: #333; margin-top: 0; }
+.tabla-usuarios { width: 100%; border-collapse: collapse; margin-top: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.tabla-usuarios th { background-color: #6c757d; color: white; text-align: left; padding: 12px; border: 1px solid #ddd; }
+.tabla-usuarios td { padding: 12px; border: 1px solid #ddd; }
+.bold { font-weight: bold; }
+.badge { background: #e2e3e5; padding: 3px 8px; border-radius: 12px; font-size: 0.9em; color: #383d41; }
