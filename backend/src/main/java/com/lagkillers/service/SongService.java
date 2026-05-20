@@ -1,7 +1,7 @@
-package services;
+package com.lagkillers.service;
 
-import model.Song;
-import repository.SongRepository;
+import com.lagkillers.model.Song;
+import com.lagkillers.repository.SongRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
