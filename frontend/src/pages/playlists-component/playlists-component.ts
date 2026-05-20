@@ -1,9 +1,14 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { PlaylistService } from '../../services/playlist.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { PlaylistService } from '../../services/playlist';
 
 @Component({
   selector: 'app-playlists',
-  templateUrl: './playlists.component.html',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  templateUrl: './playlists-component.html',
+  styleUrls: ['./playlists-component.css']
 })
 export class PlaylistsComponent implements OnInit {
   playlists = signal<any[]>([]);
@@ -11,7 +16,7 @@ export class PlaylistsComponent implements OnInit {
   constructor(private service: PlaylistService) {}
 
   ngOnInit() {
-    this.service.getAll().subscribe((data) => {
+    this.service.getAll().subscribe((data: any) => {
       this.playlists.set(data);
     });
   }

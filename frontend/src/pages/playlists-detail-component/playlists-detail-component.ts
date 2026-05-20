@@ -1,10 +1,15 @@
 import { Component, signal, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlaylistService } from '../../services/playlist.service';
+import { PlaylistService } from '../../services/playlist';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-playlist-detail',
-  templateUrl: './playlist-detail.component.html',
+  standalone: true,
+  imports: [CommonModule], // <-- CLAVE PARA LOS *ngIf y *ngFor
+  templateUrl: './playlists-detail-component.html',
+  styleUrls: ['./playlists-detail-component.css']
+
 })
 export class PlaylistDetailComponent implements OnInit {
   playlist = signal<any>(null);
@@ -17,7 +22,7 @@ export class PlaylistDetailComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.service.getById(id!).subscribe((data) => {
+   this.service.getById(Number(id!)).subscribe((data: any) => {
       this.playlist.set(data);
     });
   }
