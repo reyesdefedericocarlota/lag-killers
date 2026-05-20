@@ -1,0 +1,23 @@
+<h1>🎵 Mis Playlists</h1>
+
+<a routerLink="/playlists/nueva">➕ Crear Playlist</a>
+
+<hr>
+
+<div *ngFor="let p of playlists()">
+
+  <div style="border:1px solid #ccc; padding:10px; margin:10px">
+
+    <img [src]="p.portada" width="120">
+
+    <h3>{{ p.titulo }}</h3>
+
+    <p>{{ p.descripcion }}</p>
+
+    <a [routerLink]="['/playlists', p.id]">
+      Ver detalle
+    </a>
+
+  </div>
+
+</div>

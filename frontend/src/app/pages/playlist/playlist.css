@@ -1,0 +1,9 @@
+.playlist-container { font-family: sans-serif; max-width: 1100px; margin: 0 auto; display: flex; gap: 30px; padding: 20px; }
+.lista-seccion { flex: 1; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #ddd; height: fit-content; }
+.detalle-seccion { flex: 2; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); border-top: 4px solid #17a2b8; }
+.playlist-lista { list-style: none; padding: 0; margin: 0; }
+.playlist-item { padding: 15px; margin-bottom: 10px; background: #e9ecef; border-radius: 4px; cursor: pointer; transition: all 0.2s ease-in-out; border-left: 4px solid transparent; }
+.playlist-item:hover { background: #d3d9df; border-left: 4px solid #17a2b8; }
+.tabla-detalle { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
+.tabla-detalle th { background-color: #17a2b8; color: white; padding: 10px; text-align: left; }
+.tabla-detalle td { padding: 10px; border-bottom: 1px solid #ddd; }

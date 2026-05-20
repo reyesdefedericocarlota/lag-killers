@@ -1,0 +1,14 @@
+.container { font-family: sans-serif; max-width: 1100px; margin: 0 auto; display: flex; gap: 30px; padding: 20px; }
+.form-container { flex: 1; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); height: fit-content; }
+.form-container h3, .table-container h3 { margin-top: 0; color: #333; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+.btn-submit { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.btn-submit:disabled { background: #6c757d; cursor: not-allowed; }
+.table-container { flex: 2; }
+.tabla-canciones { width: 100%; border-collapse: collapse; margin-top: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.tabla-canciones th { background-color: #007bff; color: white; text-align: left; padding: 12px; border: 1px solid #ddd; }
+.tabla-canciones td { padding: 12px; border: 1px solid #ddd; }
+.bold { font-weight: bold; }
+.badge { background: #e9ecef; padding: 3px 8px; border-radius: 12px; font-size: 0.9em; }
