@@ -5,7 +5,7 @@ import lombok.*;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "songs")
@@ -30,6 +30,6 @@ public class Song {
     private Integer releaseYear;
 
     @ManyToMany(mappedBy = "songs")
-    @JsonBackReference
+    @JsonIgnore
     private List<Playlist> playlists;
 }

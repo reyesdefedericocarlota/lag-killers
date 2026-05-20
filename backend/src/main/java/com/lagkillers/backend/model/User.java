@@ -6,6 +6,8 @@ import lombok.*;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "users")
 @Getter
@@ -25,5 +27,6 @@ public class User {
     private LocalDate birthDate;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private List<Playlist> playlists;
 }
